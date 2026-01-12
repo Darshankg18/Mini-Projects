@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Placement Tracker</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            background: #ffffff;
+            width: 360px;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .login-card h2 {
+            margin: 0 0 10px 0;
+            text-align: center;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .login-card p {
+            text-align: center;
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            font-size: 14px;
+        }
+
+        .login-card input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .login-card button:hover {
+            background: #1d4ed8;
+        }
+
+        .footer-text {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-card">
+    <h2>Student Login</h2>
+    <p>Placement Preparation Tracker</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="footer-text">
+        Track. Improve. Get Placed.
+    </div>
+</div>
+
+</body>
+</html>
