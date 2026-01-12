@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: placement-tracker
+    env: python
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn placement_tracker.wsgi:application
